@@ -26,6 +26,7 @@ export default function Container({ render, threshold }: ContainerProps): JSX.El
     if(observer.current && containerRef.current) {
       observer.current.observe(containerRef.current)
     }
+    return () => observer.current?.disconnect()
   }, [observer, containerRef])
 
   return (
