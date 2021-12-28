@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Container from './components/Container'
+import Header from './components/Header'
+import FadeIn from './components/FadeIn'
+import LeftToRight from './components/LeftToRight'
+import Tilt from './components/Tilt'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <Container 
+        threshold={.75} 
+        render={({ isIntersected }) => <FadeIn isIntersected={isIntersected} />} 
+      />
+      <Container 
+        threshold={.75} 
+        render={({ isIntersected }) => <FadeIn isIntersected={isIntersected} />} 
+      />
+      <Container 
+        threshold={.75} 
+        render={({ isIntersected }) => <LeftToRight isIntersected={isIntersected} />} 
+      />
+      <Container 
+        threshold={.75} 
+        render={({ isIntersected }) => <Tilt isIntersected={isIntersected} />} 
+      />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
