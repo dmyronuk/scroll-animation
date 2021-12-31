@@ -19,6 +19,7 @@
     "react-hooks"
   ],
   "rules": {
+    "no-trailing-spaces": ["error"],
     "semi": ["error", "never"]
   },
   "settings": {
