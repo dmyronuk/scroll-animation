@@ -6,9 +6,7 @@ import {
   useSpringRef,
   useTransition
 } from 'react-spring'
-
-const randColorVal = () => Math.floor(Math.random() * 255)
-const randRGB = () => `rgb(${randColorVal()},${randColorVal()},${randColorVal()})`
+import { randRGB } from '../utils/colorUtils'
 
 export default function FlipChain({ isIntersected }: { isIntersected: boolean }): JSX.Element {
   const boxes = Array.from({ length: 16 }, () => ({ background: randRGB() }))
